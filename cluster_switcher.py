@@ -214,14 +214,14 @@ def show_crash_message(error_text):
     crash_window.configure(bg=CRASH_BG)
     crash_window.resizable(False, False)
 
-    tk.Label(crash_window, text="Программа упала с ошибкой", bg=CRASH_BG, fg="#ff4444", font=("Arial", 14, "bold")).pack(pady=10)
+    tk.Label(crash_window, text="Программа упала с ошибкой", bg=CRASH_BG, fg="#ff4444", font=("SF Pro Text", 14, "bold")).pack(pady=10)
     tk.Label(crash_window, text=error_text, bg=CRASH_BG, fg=CRASH_FG, font=("Helvetica Neue", 8), wraplength=460, justify="left").pack(pady=5, padx=15, fill="x")
     tk.Frame(crash_window, height=10, bg=CRASH_BG).pack()
-    tk.Label(crash_window, text="Свяжись со мной, я помогу разобраться:", bg=CRASH_BG, fg=CRASH_FG, font=("Arial", 11)).pack()
-    tk.Label(crash_window, text="Telegram: @waffleeb", bg=CRASH_BG, fg="#4fc3f7", font=("Arial", 10, "bold")).pack()
-    tk.Label(crash_window, text="GitHub: github.com/wafflee16092010-max", bg=CRASH_BG, fg="#4fc3f7", font=("Arial", 10, "bold")).pack()
-    tk.Label(crash_window, text="Почта: artemtkacev417@email.com", bg=CRASH_BG, fg="#4fc3f7", font=("Arial", 10, "bold")).pack()
-    tk.Button(crash_window, text="Закрыть", command=crash_window.destroy, bg="#555", fg="white", font=("Arial", 10, "bold")).pack(pady=15)
+    tk.Label(crash_window, text="Свяжись со мной, я помогу разобраться:", bg=CRASH_BG, fg=CRASH_FG, font=("SF Pro Text", 11)).pack()
+    tk.Label(crash_window, text="Telegram: @waffleeb", bg=CRASH_BG, fg="#4fc3f7", font=("SF Pro Text", 10, "bold")).pack()
+    tk.Label(crash_window, text="GitHub: github.com/wafflee16092010-max", bg=CRASH_BG, fg="#4fc3f7", font=("SF Pro Text", 10, "bold")).pack()
+    tk.Label(crash_window, text="Почта: artemtkacev417@email.com", bg=CRASH_BG, fg="#4fc3f7", font=("SF Pro Text", 10, "bold")).pack()
+    tk.Button(crash_window, text="Закрыть", command=crash_window.destroy, bg="#555", fg="white", font=("SF Pro Text", 10, "bold")).pack(pady=15)
 
 def global_exception_handler(exc_type, exc_value, exc_tb):
     error_msg = ''.join(traceback.format_exception(exc_type, exc_value, exc_tb))
@@ -420,29 +420,29 @@ def show_about():
     content = tk.Frame(scrollable_frame, bg="#1a1a1a", padx=20, pady=20)
     content.pack(fill="both", expand=True)
 
-    tk.Label(content, text="TANKS BLITZ", bg="#1a1a1a", fg="#ff6600", font=("Helvetica Neue", 22, "bold")).pack()
-    tk.Label(content, text="CLUSTER SWITCHER", bg="#1a1a1a", fg="#ff6600", font=("Arial", 14, "bold")).pack()
-    tk.Label(content, text=f"v{APP_VERSION}", bg="#1a1a1a", fg="#888888", font=("Arial", 10)).pack(pady=(0, 15))
+    tk.Label(content, text="TANKS BLITZ", bg="#1a1a1a", fg="#ff6600", font=("SF Pro Text", 22, "bold")).pack()
+    tk.Label(content, text="CLUSTER SWITCHER", bg="#1a1a1a", fg="#ff6600", font=("SF Pro Text", 14, "bold")).pack()
+    tk.Label(content, text=f"v{APP_VERSION}", bg="#1a1a1a", fg="#888888", font=("SF Pro Text", 10)).pack(pady=(0, 15))
 
     tk.Frame(content, height=2, bg="#ff6600").pack(fill="x", pady=5)
-    tk.Label(content, text=lang["about_desc"], bg="#1a1a1a", fg="#cccccc", font=("Arial", 10), justify="center").pack(pady=10)
+    tk.Label(content, text=lang["about_desc"], bg="#1a1a1a", fg="#cccccc", font=("SF Pro Text", 10), justify="center").pack(pady=10)
     tk.Frame(content, height=1, bg="#333333").pack(fill="x", pady=10)
 
     # функции
-    tk.Label(content, text="▸ " + lang["about_features"], bg="#1a1a1a", fg="#ff6600", font=("Arial", 10, "bold")).pack(anchor="w", pady=(0, 5))
+    tk.Label(content, text="▸ " + lang["about_features"], bg="#1a1a1a", fg="#ff6600", font=("SF Pro Text", 10, "bold")).pack(anchor="w", pady=(0, 5))
     for feature in lang["about_features_list"]:
-        tk.Label(content, text=f"  ✓ {feature}", bg="#1a1a1a", fg="#44bb44", font=("Helvetica Neue", 9, "bold")).pack(anchor="w", pady=1)
+        tk.Label(content, text=f"  ✓ {feature}", bg="#1a1a1a", fg="#44bb44", font=("SF Pro Text", 9, "bold")).pack(anchor="w", pady=1)
 
     tk.Frame(content, height=1, bg="#333333").pack(fill="x", pady=10)
 
     # контакты
-    tk.Label(content, text="▸ " + lang["about_contacts"], bg="#1a1a1a", fg="#ff6600", font=("Arial", 10, "bold")).pack(anchor="w", pady=(0, 5))
+    tk.Label(content, text="▸ " + lang["about_contacts"], bg="#1a1a1a", fg="#ff6600", font=("SF Pro Text", 10, "bold")).pack(anchor="w", pady=(0, 5))
     for name, text, cmd in [
         ("Telegram", "@waffleeb", open_telegram),
         ("GitHub", "wafflee16092010-max", open_github),
         ("Email", "artemtkacev417@email.com", open_email),
     ]:
-        lbl = tk.Label(content, text=f"  {name}: {text}", bg="#1a1a1a", fg="#4fc3f7", font=("Helvetica Neue", 9), cursor="hand2")
+        lbl = tk.Label(content, text=f"  {name}: {text}", bg="#1a1a1a", fg="#4fc3f7", font=("SF Pro Text", 9), cursor="hand2")
         lbl.pack(anchor="w", pady=2)
         lbl.bind("<Button-1>", lambda e, c=cmd: c())
         lbl.bind("<Enter>", lambda e: lbl.config(fg="#88ddff"))
@@ -455,7 +455,7 @@ def show_about():
         about.destroy()
 
     tk.Button(content, text=lang["about_close"], command=cleanup_and_close,
-              bg="#333333", fg="#ff6600", font=("Helvetica Neue", 10, "bold"),
+              bg="#333333", fg="#ff6600", font=("SF Pro Text", 10, "bold"),
               activebackground="#444444", activeforeground="#ff6600",
               relief="flat", borderwidth=2, highlightthickness=1, highlightbackground="#ff6600").pack(pady=(0, 10))
 
@@ -477,7 +477,7 @@ def check_updates():
     content_frame = tk.Frame(update_window, bg=BG_COLOR, padx=20, pady=20)
     content_frame.pack(fill="both", expand=True)
 
-    tk.Label(content_frame, text=lang["upd_checking"], bg=BG_COLOR, fg=FG_COLOR, font=("Arial", 12)).pack(pady=20)
+    tk.Label(content_frame, text=lang["upd_checking"], bg=BG_COLOR, fg=FG_COLOR, font=("SF Pro Text", 12)).pack(pady=20)
 
     def check():
         try:
@@ -493,48 +493,48 @@ def check_updates():
                     w.destroy()
 
                 if version_tuple(latest) > version_tuple(APP_VERSION):
-                    tk.Label(content_frame, text=lang["upd_found"], bg=BG_COLOR, fg="#88ff88", font=("Arial", 14, "bold")).pack(pady=10)
-                    tk.Label(content_frame, text=lang["upd_new"].format(latest), bg=BG_COLOR, fg=FG_COLOR, font=("Arial", 11)).pack(pady=5)
-                    tk.Label(content_frame, text=lang["upd_current"].format(APP_VERSION), bg=BG_COLOR, fg="#666666", font=("Arial", 10)).pack()
+                    tk.Label(content_frame, text=lang["upd_found"], bg=BG_COLOR, fg="#88ff88", font=("SF Pro Text", 14, "bold")).pack(pady=10)
+                    tk.Label(content_frame, text=lang["upd_new"].format(latest), bg=BG_COLOR, fg=FG_COLOR, font=("SF Pro Text", 11)).pack(pady=5)
+                    tk.Label(content_frame, text=lang["upd_current"].format(APP_VERSION), bg=BG_COLOR, fg="#666666", font=("SF Pro Text", 10)).pack()
 
                     if data.get("body"):
-                        tk.Label(content_frame, text=lang["upd_changes"], bg=BG_COLOR, fg=FG_COLOR, font=("Arial", 9, "bold")).pack(pady=(10, 2))
+                        tk.Label(content_frame, text=lang["upd_changes"], bg=BG_COLOR, fg=FG_COLOR, font=("SF Pro Text", 9, "bold")).pack(pady=(10, 2))
                         desc = data["body"][:300] + "..." if len(data["body"]) > 300 else data["body"]
-                        tk.Label(content_frame, text=desc, bg=BG_COLOR, fg="#d4d4d4", font=("Arial", 9), justify="left").pack(pady=5)
+                        tk.Label(content_frame, text=desc, bg=BG_COLOR, fg="#d4d4d4", font=("SF Pro Text", 9), justify="left").pack(pady=5)
 
                     btn_frame = tk.Frame(content_frame, bg=BG_COLOR)
                     btn_frame.pack(pady=10)
                     tk.Button(btn_frame, text=lang["upd_download"], command=lambda: [open_github(), update_window.destroy()],
-                              bg="#2b7a2b", fg="white", font=("Arial", 10, "bold"), cursor="hand2",
+                              bg="#2b7a2b", fg="white", font=("SF Pro Text", 10, "bold"), cursor="hand2",
                               activebackground="#3c9e3c", relief="flat").pack(side="left", padx=5)
                     tk.Button(btn_frame, text=lang["upd_later"], command=update_window.destroy,
-                              bg="#555555", fg="white", font=("Arial", 10), cursor="hand2",
+                              bg="#555555", fg="white", font=("SF Pro Text", 10), cursor="hand2",
                               activebackground="#777777", relief="flat").pack(side="left", padx=5)
                 else:
-                    tk.Label(content_frame, text=lang["upd_latest"], bg=BG_COLOR, fg="#88ff88", font=("Arial", 12, "bold")).pack(pady=20)
-                    tk.Label(content_frame, text=f"v{APP_VERSION}", bg=BG_COLOR, fg=FG_COLOR, font=("Arial", 10)).pack()
+                    tk.Label(content_frame, text=lang["upd_latest"], bg=BG_COLOR, fg="#88ff88", font=("SF Pro Text", 12, "bold")).pack(pady=20)
+                    tk.Label(content_frame, text=f"v{APP_VERSION}", bg=BG_COLOR, fg=FG_COLOR, font=("SF Pro Text", 10)).pack()
                     tk.Button(content_frame, text=lang["upd_ok"], command=update_window.destroy,
-                              bg="#555555", fg="white", font=("Arial", 10), cursor="hand2",
+                              bg="#555555", fg="white", font=("SF Pro Text", 10), cursor="hand2",
                               activebackground="#777777", relief="flat").pack(pady=10)
 
         except urllib.error.HTTPError as e:
             for w in content_frame.winfo_children():
                 w.destroy()
-            tk.Label(content_frame, text=lang["upd_error"], bg=BG_COLOR, fg="#ff4444", font=("Arial", 12, "bold")).pack(pady=10)
+            tk.Label(content_frame, text=lang["upd_error"], bg=BG_COLOR, fg="#ff4444", font=("SF Pro Text", 12, "bold")).pack(pady=10)
             if e.code == 404:
-                tk.Label(content_frame, text="GitHub repo not found", bg=BG_COLOR, fg=FG_COLOR, font=("Arial", 9)).pack(pady=5)
+                tk.Label(content_frame, text="GitHub repo not found", bg=BG_COLOR, fg=FG_COLOR, font=("SF Pro Text", 9)).pack(pady=5)
             else:
-                tk.Label(content_frame, text=f"HTTP {e.code}", bg=BG_COLOR, fg=FG_COLOR, font=("Arial", 9)).pack(pady=5)
+                tk.Label(content_frame, text=f"HTTP {e.code}", bg=BG_COLOR, fg=FG_COLOR, font=("SF Pro Text", 9)).pack(pady=5)
             tk.Button(content_frame, text=lang["upd_ok"], command=update_window.destroy,
-                      bg="#555555", fg="white", font=("Arial", 10), cursor="hand2",
+                      bg="#555555", fg="white", font=("SF Pro Text", 10), cursor="hand2",
                       activebackground="#777777", relief="flat").pack(pady=10)
         except Exception as e:
             for w in content_frame.winfo_children():
                 w.destroy()
-            tk.Label(content_frame, text=lang["upd_error"], bg=BG_COLOR, fg="#ff4444", font=("Arial", 12, "bold")).pack(pady=10)
-            tk.Label(content_frame, text=str(e), bg=BG_COLOR, fg=FG_COLOR, font=("Arial", 9)).pack(pady=5)
+            tk.Label(content_frame, text=lang["upd_error"], bg=BG_COLOR, fg="#ff4444", font=("SF Pro Text", 12, "bold")).pack(pady=10)
+            tk.Label(content_frame, text=str(e), bg=BG_COLOR, fg=FG_COLOR, font=("SF Pro Text", 9)).pack(pady=5)
             tk.Button(content_frame, text=lang["upd_ok"], command=update_window.destroy,
-                      bg="#555555", fg="white", font=("Arial", 10), cursor="hand2",
+                      bg="#555555", fg="white", font=("SF Pro Text", 10), cursor="hand2",
                       activebackground="#777777", relief="flat").pack(pady=10)
 
     root.after(100, check)
@@ -562,8 +562,8 @@ root.configure(bg=BG_COLOR)
 
 style = ttk.Style()
 style.theme_use("clam")
-style.configure("TLabel", background=BG_COLOR, foreground=FG_COLOR, font=("Arial", 10))
-style.configure("TCheckbutton", background=BG_COLOR, foreground=FG_COLOR, font=("Arial", 10))
+style.configure("TLabel", background=BG_COLOR, foreground=FG_COLOR, font=("SF Pro Text", 10))
+style.configure("TCheckbutton", background=BG_COLOR, foreground=FG_COLOR, font=("SF Pro Text", 10))
 style.map("TCheckbutton", background=[("active", BG_COLOR)])
 
 # кнопки через Label — на macOS tk.Button игнорит кастомные цвета
@@ -582,7 +582,7 @@ def lighten_color(color):
     b = min(255, int(int(color[5:7], 16) * 1.15))
     return f"#{r:02x}{g:02x}{b:02x}"
 
-label_main = tk.Label(root, text=LANG[current_lang]["label"], bg=BG_COLOR, fg="#ff6600", font=("Helvetica Neue", 12, "bold"))
+label_main = tk.Label(root, text=LANG[current_lang]["label"], bg=BG_COLOR, fg="#ff6600", font=("SF Pro Text", 12, "bold"))
 label_main.pack(pady=(20, 8))
 
 # чекбоксы
@@ -594,7 +594,7 @@ for key in cluster_keys:
     checkboxes[key] = var
     cb = tk.Checkbutton(root, text=LANG[current_lang]["clusters"][key], variable=var,
                         bg=BG_COLOR, fg="#ff6600", selectcolor="#2b7a2b",
-                        activebackground=BG_COLOR, activeforeground="#ff6600", font=("Helvetica Neue", 10))
+                        activebackground=BG_COLOR, activeforeground="#ff6600", font=("SF Pro Text", 10))
     cb.pack(anchor="w", padx=30)
     cb_widgets[key] = cb
 
@@ -611,11 +611,11 @@ select_frame = tk.Frame(root, bg=BG_COLOR)
 select_frame.pack(pady=(0, 5))
 
 btn_select_all = create_custom_button(select_frame, "[ " + LANG[current_lang]["select_all"] + " ]",
-                                      select_all, "#333333", "#ff6600", ("Courier", 9), width=10, height=1)
+                                      select_all, "#333333", "#ff6600", ("SF Pro Text", 9), width=10, height=1)
 btn_select_all.pack(side="left", padx=5)
 
 btn_deselect_all = create_custom_button(select_frame, "[ " + LANG[current_lang]["deselect_all"] + " ]",
-                                        deselect_all, "#333333", "#ff6600", ("Courier", 9), width=10, height=1)
+                                        deselect_all, "#333333", "#ff6600", ("SF Pro Text", 9), width=10, height=1)
 btn_deselect_all.pack(side="left", padx=5)
 
 # кнопка применить
@@ -623,22 +623,22 @@ btn_apply_frame = tk.Frame(root, bg=BG_COLOR)
 btn_apply_frame.pack(pady=(10, 15))
 
 btn_apply = create_custom_button(btn_apply_frame, LANG[current_lang]["apply"], on_apply,
-                                 "#333333", "#ff6600", ("Courier", 12, "bold"), width=18, height=2)
+                                 "#333333", "#ff6600", ("SF Pro Text", 12, "bold"), width=18, height=2)
 btn_apply.pack()
 
 # статус
-status_label = tk.Label(root, text="", bg=BG_COLOR, fg="#44bb44", font=("Helvetica Neue", 10),
+status_label = tk.Label(root, text="", bg=BG_COLOR, fg="#44bb44", font=("SF Pro Text", 10),
                         wraplength=440, justify="left")
 status_label.pack(pady=(0, 5))
 
 # последнее действие
-action_label = tk.Label(root, text="", bg=BG_COLOR, fg="#666666", font=("Helvetica Neue", 8),
+action_label = tk.Label(root, text="", bg=BG_COLOR, fg="#666666", font=("SF Pro Text", 8),
                         wraplength=440, justify="left")
 action_label.pack(pady=(0, 5))
 
 # обновить статус
 btn_refresh = create_custom_button(root, LANG[current_lang]["refresh"], on_refresh,
-                                   "#333333", "#ff6600", ("Courier", 10), width=16, height=1)
+                                   "#333333", "#ff6600", ("SF Pro Text", 10), width=16, height=1)
 btn_refresh.pack(pady=(0, 15))
 
 # доп. кнопки — первая строка
@@ -646,11 +646,11 @@ extras_frame = tk.Frame(root, bg=BG_COLOR)
 extras_frame.pack(pady=5)
 
 btn_about = create_custom_button(extras_frame, "[ " + LANG[current_lang]["about"] + " ]",
-                                 show_about, "#333333", "#ff6600", ("Courier", 9), width=12, height=1)
+                                 show_about, "#333333", "#ff6600", ("SF Pro Text", 9), width=12, height=1)
 btn_about.pack(side="left", padx=5)
 
 btn_updates = create_custom_button(extras_frame, "[ " + LANG[current_lang]["check_updates"] + " ]",
-                                   check_updates, "#333333", "#ff6600", ("Courier", 9), width=16, height=1)
+                                   check_updates, "#333333", "#ff6600", ("SF Pro Text", 9), width=16, height=1)
 btn_updates.pack(side="left", padx=5)
 
 # доп. кнопки — вторая строка
@@ -658,7 +658,7 @@ extras_frame2 = tk.Frame(root, bg=BG_COLOR)
 extras_frame2.pack(pady=(0, 5))
 
 btn_restore = create_custom_button(extras_frame2, "[ " + LANG[current_lang]["restore_btn"] + " ]",
-                                   on_restore_hosts, "#333333", "#ff6600", ("Courier", 9), width=16, height=1)
+                                   on_restore_hosts, "#333333", "#ff6600", ("SF Pro Text", 9), width=16, height=1)
 btn_restore.pack()
 
 # переключение языка
@@ -694,7 +694,7 @@ lang_buttons_frame = tk.Frame(root, bg=BG_COLOR)
 lang_buttons_frame.pack(pady=5)
 
 def create_lang_button(frame, text, lang_code):
-    btn = tk.Label(frame, text=text, bg="#333333", fg="#ff6600", font=("Helvetica Neue", 9, "bold"),
+    btn = tk.Label(frame, text=text, bg="#333333", fg="#ff6600", font=("SF Pro Text", 9, "bold"),
                    cursor="hand2", padx=15, pady=5, relief="flat", borderwidth=1,
                    highlightbackground="#ff6600", highlightthickness=1)
     btn.pack(side="left", padx=5)
@@ -711,7 +711,7 @@ contact_title = None
 folder_btn = None
 
 def create_contact_button(frame, text, url_func, color="#4fc3f7"):
-    lbl = tk.Label(frame, text=text, bg=BG_COLOR, fg=color, font=("Helvetica Neue", 9), cursor="hand2")
+    lbl = tk.Label(frame, text=text, bg=BG_COLOR, fg=color, font=("SF Pro Text", 9), cursor="hand2")
     lbl.pack(side="left", padx=10, pady=5)
     lbl.bind("<Button-1>", lambda e: url_func())
     lbl.bind("<Enter>", lambda e: lbl.config(fg="#88ddff"))
@@ -724,7 +724,7 @@ def create_contact_section():
     contact_frame.pack(pady=10, fill="x")
 
     contact_title = tk.Label(contact_frame, text=LANG[current_lang]["contact"], bg=BG_COLOR,
-                             fg="#ff6600", font=("Helvetica Neue", 9, "bold"))
+                             fg="#ff6600", font=("SF Pro Text", 9, "bold"))
     contact_title.pack(pady=(0, 5))
 
     buttons_frame = tk.Frame(contact_frame, bg=BG_COLOR)
@@ -735,7 +735,7 @@ def create_contact_section():
     create_contact_button(buttons_frame, "Email artemtkacev417@email.com", open_email)
     folder_btn = create_contact_button(buttons_frame, "[ " + LANG[current_lang]["open_folder"] + " ]", open_app_folder, "#ff6600")
 
-    tk.Label(contact_frame, text=f"v{APP_VERSION}", bg=BG_COLOR, fg="#666666", font=("Helvetica Neue", 8)).pack(pady=5)
+    tk.Label(contact_frame, text=f"v{APP_VERSION}", bg=BG_COLOR, fg="#666666", font=("SF Pro Text", 8)).pack(pady=5)
 
 create_contact_section()
 
@@ -746,7 +746,7 @@ def create_donate_section():
     donate_frame.pack(pady=5)
 
     donate_label = tk.Label(donate_frame, text=LANG[current_lang]["donate"], bg=BG_COLOR,
-                            fg="#ff6600", font=("Helvetica Neue", 10, "bold"), cursor="hand2")
+                            fg="#ff6600", font=("SF Pro Text", 10, "bold"), cursor="hand2")
     donate_label.pack()
     donate_label.bind("<Button-1>", lambda e: open_donate())
     donate_label.bind("<Enter>", lambda e: donate_label.config(fg="#ff8833"))
