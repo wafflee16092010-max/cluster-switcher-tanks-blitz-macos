@@ -1,5 +1,4 @@
-# Tanks Blitz Cluster Switcher
- # Tanks Blitz Cluster Switcher for macO
+# Tanks Blitz Cluster Switcher for macO
 Программа для macOS, которая блокирует кластеры Tanks Blitz через файл /etc/hosts. Удобно, если хочешь играть на конкретном сервере — остальные просто отключаются.
 
 ## Установка
